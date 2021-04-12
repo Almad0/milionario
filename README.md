@@ -1,24 +1,16 @@
-# milionario
+# Chi vuol essere milionario.
 
-## Project setup
+### Semplice app realizzata con:
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+Html5
+Css3 (Sass)
+Vue cli
+Axios
 ```
 
-### Compiles and minifies for production
+### Riepilogo
 ```
-npm run build
+L'applicazione chiede all'utente di rispondere a domande poste randomicamente.
+Se la risposta è giusta si illuminerà di verde.
+Se la risposta è errata si illuminerà di rosso, mostrando in verde quella corretta.
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
