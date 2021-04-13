@@ -1,13 +1,22 @@
 <template>
   <div class="answer_box">
-    <p>Risposte</p>
-    <p>1 2 3 4</p>
+    <h4>Risposte</h4>
+    <p>{{ currentQuestion[0].answerText }}</p>
+    <p>{{ currentQuestion[1].answerText }}</p>
+    <p>{{ currentQuestion[2].answerText }}</p>
+    <p>{{ currentQuestion[3].answerText }}</p>
+
   </div>
 </template>
 
 <script>
 export default {
   name: "AnswerComponent",
-
+  props: {
+    currentQuestion: Array
+  },
+  mounted() {
+    console.log(this.currentQuestion)
+  }
 }
 </script>

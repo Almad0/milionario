@@ -1,8 +1,8 @@
 <template>
   <div class="question_box">
     <h3>Domanda</h3>
-    <p>{{ questionsArray[0].questionText }}</p>
-    <AnswerComponent/>
+    <p>{{ questionsArray[this.rand].questionText }}</p>
+    <AnswerComponent v-bind:currentQuestion="currentQuestion"/>
   </div>
 </template>
 
@@ -17,5 +17,21 @@ export default {
   components: {
     AnswerComponent
   },
+
+  data() {
+    return {
+      rand: 0,
+      currentQuestion: []
+    }
+  },
+
+  created() {
+    this.rand = Math.floor(Math.random() * this.questionsArray.length);
+    this.currentQuestion = this.questionsArray[this.rand].answersArray;
+    console.log(this.questionsArray[this.rand].answersArray)
+  }
+
 }
+
+
 </script>
