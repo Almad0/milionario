@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <MillionComponent/>
+    <div class="up_div">
+      <img alt="Vue logo" src="./assets/logo.png">
+    </div>
+    <div class="down_div">
+      <MillionComponent/>
+    </div>
   </div>
 </template>
 
@@ -17,15 +21,30 @@ export default {
 </script>
 
 <style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
+  height:100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  img{
-    width: 500px;
+
+  .up_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: #0E118E;
+    img{
+      padding: 20px;
+      width: 250px;
+    }
+  }
+  .down_div{
+    height: calc(100vh - 300px);
+    background-color: #11093A;
   }
 }
 </style>

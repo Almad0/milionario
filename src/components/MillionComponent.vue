@@ -1,6 +1,5 @@
 <template>
   <div class="million_box">
-    <h2>Chi vuol'essere milionario? Tua sorella? </h2>
     <QuestionComponent v-bind:questionsArray="questionsArray"/>
   </div>
 </template>
@@ -18,14 +17,14 @@ export default {
     return {
       questionsArray: [
         {
-          questionText: "Di che colore è la cappella di Napoleone?",
+          questionText: "Di che colore è il cappello di Napoleone?",
           answersArray:[
             {
               answerText: "Giallo canarino",
               correct: false
             },
             {
-              answerText: "Verde Pisello",
+              answerText: "Verde pisello",
               correct: true
             },
             {
@@ -39,23 +38,44 @@ export default {
           ]
         },
         {
-          questionText: "Chi tra questi è un truffatore di merda?",
+          questionText: "Chi tra questi personaggi ha gli occhi neri",
           answersArray:[
             {
-              answerText: "Lupin 3",
-              correct: false
-            },
-            {
-              answerText: "Silvio Berlusconi",
-              correct: false
-            },
-            {
-              answerText: "Maria Pia Gianguzzi",
-              correct: false
-            },
-            {
-              answerText: "Fabio Pacifici",
+              answerText: "Tommaso Figlia",
               correct: true
+            },
+            {
+              answerText: "Alfredo Lozano",
+              correct: false
+            },
+            {
+              answerText: "Mariapia Gianguzzi",
+              correct: false
+            },
+            {
+              answerText: "Raffaele Baldassarre",
+              correct: false
+            }
+          ]
+        },
+        {
+          questionText: "Quale, tra queste tecnologie, non è un linguaggio di programmazione",
+          answersArray:[
+            {
+              answerText: "Javascript",
+              correct: false
+            },
+            {
+              answerText: "Html",
+              correct: true
+            },
+            {
+              answerText: "Php",
+              correct: false
+            },
+            {
+              answerText: "Java",
+              correct: false
             }
           ]
         }
@@ -65,3 +85,7 @@ export default {
 
 }
 </script>
+
+<style lang="scss">
+
+</style>
