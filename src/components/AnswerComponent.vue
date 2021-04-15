@@ -19,7 +19,7 @@ export default {
     currentQuestion: Array
   },
   mounted() {
-    // console.log(this.currentQuestion)
+    console.log(this.currentQuestion)
   }
 }
 </script>

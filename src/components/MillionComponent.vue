@@ -1,11 +1,15 @@
 <template>
   <div class="million_box">
-    <QuestionComponent v-bind:questionsArray="questionsArray"/>
+    <QuestionComponent v-bind:questionsArray="questionsArray" v-if="questionsArray"/>
   </div>
 </template>
 
 <script>
-import QuestionComponent from "./QuestionComponent"
+import QuestionComponent from "./QuestionComponent";
+import axios from 'axios';
+const ax = axios.create({
+  baseURL: "http://localhost:8080/",
+});
 
 
 export default {
@@ -15,74 +19,17 @@ export default {
   },
   data() {
     return {
-      questionsArray: [
-        {
-          questionText: "Di che colore è il cappello di Napoleone?",
-          answersArray:[
-            {
-              answerText: "Giallo canarino",
-              correct: false
-            },
-            {
-              answerText: "Verde pisello",
-              correct: true
-            },
-            {
-              answerText: "Indaco spaziale",
-              correct: false
-            },
-            {
-              answerText: "Terra di Siena",
-              correct: false
-            }
-          ]
-        },
-        {
-          questionText: "Chi tra questi personaggi ha gli occhi neri",
-          answersArray:[
-            {
-              answerText: "Tommaso Figlia",
-              correct: true
-            },
-            {
-              answerText: "Alfredo Lozano",
-              correct: false
-            },
-            {
-              answerText: "Mariapia Gianguzzi",
-              correct: false
-            },
-            {
-              answerText: "Raffaele Baldassarre",
-              correct: false
-            }
-          ]
-        },
-        {
-          questionText: "Quale, tra queste tecnologie, non è un linguaggio di programmazione",
-          answersArray:[
-            {
-              answerText: "Javascript",
-              correct: false
-            },
-            {
-              answerText: "Html",
-              correct: true
-            },
-            {
-              answerText: "Php",
-              correct: false
-            },
-            {
-              answerText: "Java",
-              correct: false
-            }
-          ]
-        }
-      ]
+      questionsArray: null
     }
+  },
+  mounted() {
+    let url = "data.json";
+    ax.get(url)
+      .then((response) => {
+        this.questionsArray = response.data;
+        console.log(response.data);
+      })
   }
-
 }
 </script>
 
